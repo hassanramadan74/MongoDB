@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "73c7ca80-de31-4edc-8ee2-aa5401dee4b0",
+		"name": "mongoDb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23402411"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"eslam\",\r\n    \"email\":\"eslam@gmail.com\",\r\n    \"password\":\"123\",\r\n    \"age\":23,\r\n    \"gender\":\"male\",\r\n    \"phone\":\"01128018926\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/signUp"
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"hassan@gmail.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/signIn"
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"eslam\",\r\n    \"email\":\"eslam@gmail.com\",\r\n    \"password\":\"123\",\r\n    \"age\":55,\r\n    \"gender\":\"male\",\r\n    \"phone\":\"01128018926\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users/657e395c956add2ed3eb7485"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/users/657e395c956add2ed3eb7485"
+					},
+					"response": []
+				},
+				{
+					"name": "getSpecificUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/searchUsers?name=e&maxAge=25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"searchUsers"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "e"
+								},
+								{
+									"key": "maxAge",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchUsersAge",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/searchUsers?minAge=19&maxAge=25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"searchUsers"
+							],
+							"query": [
+								{
+									"key": "minAge",
+									"value": "19"
+								},
+								{
+									"key": "maxAge",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUserProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/getUsersProducts"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"firstPost\",\r\n    \"desc\":\"hello from firstPost\",\r\n    \"price\":2000,\r\n    \"userId\":\"657e38d8956add2ed3eb747f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/product"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/product"
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"updated firstPost\",\r\n    \"userId\":\"657e38d8956add2ed3eb747f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/product/657e526039b1744c7302e344"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"657e38d8956add2ed3eb747f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/product/657e526039b1744c7302e344"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsWithOwnerInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/getProductsOwners"
+					},
+					"response": []
+				},
+				{
+					"name": "getSortedProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/getSortedProducts"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
